@@ -1,62 +1,27 @@
-# Grocery Store Management System
+# Groceryapp
 
-Welcome to the Grocery Store Management System! This project provides a RESTful API for managing grocery items in a store.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
 
-## Table of Contents
+## Development server
 
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Contributing](#contributing)
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Features
+## Code scaffolding
 
-- CRUD operations for grocery items (Create, Read, Update, Delete).
-- Secure RESTful API.
-- Flexible and scalable architecture.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Technologies Used
+## Build
 
-- Spring Boot
-- Spring Data JPA
-- Hibernate
-- Java Persistence API (JPA)
-- MySQL (or any other supported database)
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Getting Started
+## Running unit tests
 
-### Prerequisites
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-- Java Development Kit (JDK) 8 or higher installed
-- Maven installed
-- MySQL (or any other supported database) installed and running
+## Running end-to-end tests
 
-## Usage
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-Once the application is up and running, you can interact with the API endpoints using tools like cURL, Postman, or any HTTP client.
+## Further help
 
-## API Endpoints
-
-The following endpoints are available:
-
-- `GET /grocery/items`: Get all grocery items.
-- `GET /grocery/items/{id}`: Get a specific grocery item by ID.
-- `POST /grocery/items`: Add a new grocery item.
-- `PUT /grocery/items/{id}`: Update an existing grocery item.
-- `DELETE /grocery/items/{id}`: Delete a grocery item.
-
-For detailed information on request and response formats, refer to the API documentation.
-
-## Contributing
-
-Contributions are welcome! Here's how you can contribute:
-
-1. Fork the repository.
-2. Create your feature branch (`git checkout -b feature/MyFeature`).
-3. Commit your changes (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature/MyFeature`).
-5. Create a new Pull Request.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
