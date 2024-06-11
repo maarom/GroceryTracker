@@ -3,6 +3,7 @@ import { GroceryService } from './grocery.service';
 import { Item } from './item';
 import { NgForm } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ConfirmationDialogService } from './confirmation-dialog.service';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +12,14 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
 
-  public items: Item[] | undefined | null = null;
-  public editItem: Item | undefined | null;
-  public deleteItem: Item | undefined | null;
+  public items: Item[] = [];
+  public filteredItems: Item[] = [];
+  public editItem: Item | null = null;
 
-  constructor(private groceryService: GroceryService) { }
+  constructor(
+    private groceryService: GroceryService,
+    private confirmationDialogService: ConfirmationDialogService
+  ) { }
 
   ngOnInit(): void {
     this.getItems();
@@ -25,6 +29,7 @@ export class AppComponent implements OnInit {
     this.groceryService.getItems().subscribe(
       (response: Item[]) => {
         this.items = response;
+        this.filteredItems = response;
         console.log(this.items);
       },
       (error: HttpErrorResponse) => {
@@ -41,15 +46,35 @@ export class AppComponent implements OnInit {
   private sortItems(field: string): void {
     if (this.items) {
       if (field === 'name-asc') {
-        this.items.sort((a, b) => a.name.localeCompare(b.name));
+        this.filteredItems.sort((a, b) => a.name.localeCompare(b.name));
       } else if (field === 'name-desc') {
-        this.items.sort((a, b) => b.name.localeCompare(a.name));
+        this.filteredItems.sort((a, b) => b.name.localeCompare(a.name));
       } else if (field === 'price-asc') {
-        this.items.sort((a, b) => a.price - b.price);
+        this.filteredItems.sort((a, b) => a.price - b.price);
       } else if (field === 'price-desc') {
-        this.items.sort((a, b) => b.price - a.price);
+        this.filteredItems.sort((a, b) => b.price - a.price);
+      } else if (field === 'quantity-asc') {
+        this.filteredItems.sort((a, b) => a.quantity - b.quantity);
+      } else if (field === 'quantity-desc') {
+        this.filteredItems.sort((a, b) => b.quantity - a.quantity);
       }
     }
+  }
+
+  public onSearch(event: Event): void {
+    const searchTerm = (event.target as HTMLInputElement).value.toLowerCase();
+    this.filterItems(searchTerm);
+  }
+
+  private filterItems(searchTerm: string): void {
+    if (!searchTerm) {
+      this.filteredItems = [...this.items];
+      return;
+    }
+
+    this.filteredItems = this.items.filter(item =>
+      item.name.toLowerCase().includes(searchTerm) || item.id.toString().startsWith(searchTerm)
+    );
   }
 
   public onAddItem(addForm: NgForm): void {
@@ -97,18 +122,21 @@ export class AppComponent implements OnInit {
   }
 
   public onDeleteItem(itemId: number): void {
-    this.groceryService.deleteItem(itemId).subscribe(
-      (response: void) => {
-        this.getItems();
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
+    this.confirmationDialogService.confirm('Are you sure you want to delete this item?').subscribe(confirmed => {
+      if (confirmed) {
+        this.groceryService.deleteItem(itemId).subscribe(
+          (response: void) => {
+            this.getItems();
+          },
+          (error: HttpErrorResponse) => {
+            alert(error.message);
+          }
+        );
       }
-    );
+    });
   }
 
   public cancelEdit(): void {
     this.editItem = null;
   }
-
 }
