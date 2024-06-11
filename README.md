@@ -23,15 +23,15 @@ Grocery Manager is an Angular application that helps users manage their grocery 
 
 To run the application locally, follow these steps:
 
-# 1. Clone the repository 
-# git clone https://github.com/maarom/GroceryTracker  
-# 2. Load the pom.xml file
-# You can right-click on pom.file and select *Load the maven project* 
-# 3. Start the MYSQl local server
-# You can setup your login and password for database inside back-end/src/main/resources/application.properties
-# 4. Navigate to the front-end folder via terminal and execute *ng serve* command
-# If you are in project folder, just put cd .\front-end\ in terminal and execute the command
-# 5. Open your browser and visit http://localhost:4200 to view the application.
+ 1. Clone the repository 
+ git clone https://github.com/maarom/GroceryTracker  
+ 2. Load the pom.xml file
+ You can right-click on pom.file and select *Load the maven project* 
+ 3. Start the MYSQl local server
+ You can setup your login and password for database inside back-end/src/main/resources/application.properties
+ 4. Navigate to the front-end folder via terminal and execute *ng serve* command
+ If you are in project folder, just put cd .\front-end\ in terminal and execute the command
+ 5. Open your browser and visit http://localhost:4200 to view the application.
 
 
 
