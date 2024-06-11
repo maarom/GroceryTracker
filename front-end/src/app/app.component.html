@@ -10,7 +10,12 @@
         <option value="name-desc">Name: Z to A</option>
         <option value="price-asc">Price: Low to High</option>
         <option value="price-desc">Price: High to Low</option>
+        <option value="quantity-asc">Quantity: Low to High</option>
+        <option value="quantity-desc">Quantity: High to Low</option>
       </select>
+    </div>
+    <div>
+      <input type="text" class="form-control" placeholder="Search by ID or Name" (input)="onSearch($event)">
     </div>
   </div>
 
@@ -38,6 +43,7 @@
   <table class="table table-striped mt-4">
     <thead class="thead-dark">
     <tr>
+      <th>ID</th>
       <th>Name</th>
       <th>Description</th>
       <th>Price</th>
@@ -46,7 +52,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let item of items">
+    <tr *ngFor="let item of filteredItems">
+      <td>{{ item.id }}</td>
       <td>{{ item.name }}</td>
       <td>{{ item.description }}</td>
       <td>{{ item.price | currency }}</td>
