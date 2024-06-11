@@ -15,6 +15,7 @@ Grocery Manager is an Angular application that helps users manage their grocery 
 - **Angular**: Frontend framework for building the user interface.
 - **Spring Boot**: Backend framework for handling HTTP requests and data persistence.
 - **RESTful API**: Communication between the frontend and backend using RESTful principles.
+- **MySQL**: Relational database management system for data storage.
 - **HTML/CSS**: Markup and styling for the user interface.
 - **Bootstrap**: Frontend framework for responsive design and UI components.
 - **Java Persistence API (JPA)**: Java programming interface for managing relational data in Java applications.
@@ -27,7 +28,7 @@ To run the application locally, follow these steps:
  - git clone https://github.com/maarom/GroceryTracker  
  2. Load the pom.xml file
  - You can right-click on pom.file and select *Load the maven project* 
- 3. Start the MYSQl local server
+ 3. Start the MySQL local server
  - You can setup your login and password for database inside back-end/src/main/resources/application.properties
  4. Navigate to the front-end folder via terminal and execute *ng serve* command
  - If you are in project folder, just put cd .\front-end\ in terminal and execute the command
@@ -38,24 +39,24 @@ To run the application locally, follow these steps:
 ## Folder Structure
 grocery-manager/
 │
-├── src/                     # Source files
-│   ├── app/                 # Angular application files
-│   │   ├── app.component.html      # Main component template
-│   │   ├── app.component.ts        # Main component logic
-│   │   ├── grocery.service.ts      # Service for managing grocery items
-│   │   ├── item.ts                # Interface for representing grocery items
-│   │   └── ...                    # Other components, services, and files
-│   ├── assets/              # Static assets (images, fonts, etc.)
-│   ├── index.html           # Main HTML file
-│   └── ...                  # Other configuration and build files
+├── src/ # Source files
+│ ├── app/ # Angular application files
+│ │ ├── app.component.html # Main component template
+│ │ ├── app.component.ts # Main component logic
+│ │ ├── grocery.service.ts # Service for managing grocery items
+│ │ ├── item.ts # Interface for representing grocery items
+│ │ └── ... # Other components, services, and files
+│ ├── assets/ # Static assets (images, fonts, etc.)
+│ ├── index.html # Main HTML file
+│ └── ... # Other configuration and build files
 │
-├── backend/                 # Backend files (Spring Boot application)
-│   ├── src/                 # Source files
-│   │   ├── main/            # Main application code
-│   │   ├── test/            # Test code
-│   │   └── ...              # Other configuration and build files
-│   ├── pom.xml              # Maven dependencies and build configuration
-│   └── ...                  # Other backend-related files
+├── backend/ # Backend files (Spring Boot application)
+│ ├── src/ # Source files
+│ │ ├── main/ # Main application code
+│ │ ├── test/ # Test code
+│ │ └── ... # Other configuration and build files
+│ ├── pom.xml # Maven dependencies and build configuration
+│ └── ... # Other backend-related files
 │
-├── README.md               # Project README file
-└── ...                     # Other project-related files
+├── README.md # Project README file
+└── ... # Other project-related files
