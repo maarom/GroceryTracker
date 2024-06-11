@@ -37,9 +37,10 @@ To run the application locally, follow these steps:
 
 
 ## Folder Structure
-grocery-manager/
+```bash
+GroceryManager/
 │
-├── src/ # Source files
+├───front-end # Source files
 │ ├── app/ # Angular application files
 │ │ ├── app.component.html # Main component template
 │ │ ├── app.component.ts # Main component logic
@@ -50,13 +51,25 @@ grocery-manager/
 │ ├── index.html # Main HTML file
 │ └── ... # Other configuration and build files
 │
-├── backend/ # Backend files (Spring Boot application)
-│ ├── src/ # Source files
-│ │ ├── main/ # Main application code
-│ │ ├── test/ # Test code
-│ │ └── ... # Other configuration and build files
-│ ├── pom.xml # Maven dependencies and build configuration
-│ └── ... # Other backend-related files
+├───back-end # Backend files (Spring Boot application)
+│   ├───src # Source files
+│   │   ├───main # Main application code
+│   │   │   ├───java
+│   │   │   │   └───com
+│   │   │   │       └───example
+│   │   │   │           └───GroceryManager
+│   │   │   │               ├───config    
+│   │   │   │               ├───model
+│   │   │   │               ├───repo
+│   │   │   │               ├───resource
+│   │   │   │               └───service
+│   │   │   └───resources
+│   │   └───test
+│   │       └───java
+│   │           └───com
+│   │               └───example
+│   │                   └───GroceryManager
 │
 ├── README.md # Project README file
 └── ... # Other project-related files
+```
