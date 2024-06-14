@@ -15,10 +15,11 @@ Grocery Manager is an Angular application that helps users manage their grocery 
 - **Angular**: Frontend framework for building the user interface.
 - **Spring Boot**: Backend framework for handling HTTP requests and data persistence.
 - **RESTful API**: Communication between the frontend and backend using RESTful principles.
+- **Java Persistence API (JPA)**: Java programming interface for managing relational data in Java applications.
 - **MySQL**: Relational database management system for data storage.
 - **HTML/CSS**: Markup and styling for the user interface.
 - **Bootstrap**: Frontend framework for responsive design and UI components.
-- **Java Persistence API (JPA)**: Java programming interface for managing relational data in Java applications.
+
 
 ## Getting Started
 
@@ -27,7 +28,7 @@ To run the application locally, follow these steps:
  1. Clone the repository 
  - git clone https://github.com/maarom/GroceryTracker  
  2. Load the pom.xml file
- - You can right-click on pom.file and select *Load the maven project* 
+ - You can right-click on pom.xml file and select *Load the maven project* 
  3. Start the MySQL local server
  - You can setup your login and password for database inside back-end/src/main/resources/application.properties
  4. Navigate to the front-end folder via terminal and execute *ng serve* command
